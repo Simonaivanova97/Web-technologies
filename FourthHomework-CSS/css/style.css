@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #defdf1;
+  }
+  
+  form{
+    border: 1px solid #6ca05d;
+    margin-top: 62px;
+    margin-bottom: 82px;
+    margin-left: 75px;
+    margin-right: 75px;
+  }
+  
+  input[type=text], input[type=password], input[type=mobile], input[type=email], input[type=owner], input[type="apartmentNumber"], select{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #c5d2c5;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color:#cfe7d9;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: 1px solid #bbc9ba;
+    cursor: pointer;
+    width: 100%;
+    color: #729048;
+  }
+  
+  button:hover {
+    background-color: #558D3D;
+    color: #CFE7D9;
+    border: 1px solid;
+    border-color:#CFE7D9;
+  }
+  
+  input:hover{border: 1px solid;
+  border-color:#79A06B;
+}
