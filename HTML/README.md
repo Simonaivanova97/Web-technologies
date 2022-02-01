@@ -11,7 +11,8 @@ HTML = HyperText Markup Language.
     - input - определя поле за въвеждане, кдъдето потребителят може да въвежда данни;
     - link - дефинира връзка между текущия документ и друг файл - css, favicon...;
     - meta - метаинформация като encoding, author, summary и тн.;
-    - param - използва за дефиниране на параметри за <object>.
+    - param - използва за дефиниране на параметри за ```<object>``` .
+
     
 #### Основни HTML тагове
 - Системни - html, body, head, title, script, style, meta, link;
