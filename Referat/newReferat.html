@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+
+    <style>
+         body {
+            font-family: 'Gill Sans', sans-serif;
+            font-size: 18px;
+            background-color:lavenderblush;
+            }
+
+        .smartphone {
+            position: fixed;
+            width: 25%;
+            height: 80%;
+            margin:auto;
+            border: 16px black solid;
+            border-top-width: 60px;
+            border-bottom-width: 60px;
+            border-radius: 36px;
+            top:1%;
+            left:1%;
+        }
+  
+        .smartphone:before {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 5px;
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #333;
+            border-radius: 10px;
+        }
+  
+        .smartphone:after {
+            content: '';
+            display: block;
+            width: 35px;
+            height: 35px;
+            position: absolute;
+            left: 50%;
+            bottom: -65px;
+            transform: translate(-50%, -50%);
+            background: #333;
+            border-radius: 50%;
+        }
+
+        .smartphone .content {
+            width: 100%;
+            height: 100%;
+            background: white;
+            overflow-y: scroll;
+        }
+
+        .smartphone .content a{
+            color: red;
+            text-align:center;
+            padding: 6px;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+        }
+
+        .smartphone .content a:hover {
+            background-color: red;
+            color:white;
+        }
+
+        .smartphone .content .dropdown {
+            text-align: center;
+            position: relative;
+        }
+  
+        .smartphone .content .dropdown-content {
+            display: none;
+            background-color: white;
+            min-width: 160px;
+            z-index: 1;
+        }
+  
+        .smartphone .content .dropdown-content a {
+            color: red;
+            padding: 6px 8px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+        }
+
+        .smartphone .content .dropdown-content a:hover {
+            background-color: red;
+            color:white;
+        }
+  
+        .smartphone .content .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .main {
+            margin-left: 32%;
+            margin-right: 3%;
+            width: 65%;
+            position: relative;
+            overflow-x: hidden;
+            font-size: 18px;
+        }
+
+        .innerContent {
+            margin-left: 40px;
+        }
+
+        h1{
+            color:red;
+            text-align: center;
+            border-width: 5px;
+            border-style:ridge;
+            border-color: red;
+        }
+        
+        h2{
+            color:tomato;
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        h3, h4{
+            color:lightsalmon;
+            text-align: center;
+        }
+
+        table, td, th {
+            border: 1px solid black;
+        }
+  
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+            height: auto;
+        }
+
+        .column {
+            float: left;
+            width: 50%;
+            height: auto;
+            text-align: center;
+        }
+
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        code{
+            color: darkmagenta;
+        }
+
+        figcaption{
+            text-align: center;
+            font-size: 14px;
+        }
+    </style>
+
+    <title>Framework7 - разработка на уеб приложения за Android и iOS</title>
+</head>
+<body>
+    <div class="smartphone">
+        <div class="content">
+            <img src="img/share-banner.jpg" width="100%" height="auto">
+            <a href="#framework">Какво е framework?</a>
+            <a href="#framework7">Какво е framework7?</a>
+            <a href="#advantageF7">Предимства на framework7</a>
+            <a href="#disadvantageF7">Недостатъци на framework7</a>
+            <a href="#instalation">Инсталиране на Framework7 CLI</a>
+            <div class="dropdown">
+                <a href="#F7components">Framework7 компоненти</a>
+                <div class="dropdown-content">
+                    <a href="#buttons">Бутони</a>
+                    <a href="#layout">Оформления</a>
+                    <a href="#searchBar"> Лента за търсене</a>
+                    <a href="#inputf"> Поле за въвеждане</a>
+                </div>
+            </div>
+            <a href="#sources">Източници</a>
+            <a href="#figure">Фигури</a>
+            <a href="#about">За автора</a>
+        </div>
+    </div>
+    <div class="main">
+        <h1> Framework7 - разработка на уеб приложения за Android и iOS</h1>
+        <br>
+        <h2 id="framework"> Какво е framework? </h2>
+        <p>В програмирането “framework” е абстракция, при която софтуерът, предоставящ обща функционалност, може да бъде 
+        променян чрез допълнителен написан от потребителя код. Фреймуъркът (наричан още: „технологична рамка“ или 
+        „софтуерна рамка“) представлява стандартен начин за изграждане на приложения. Софтуерната рамка носи в себе си 
+        базови функционалности, с което се улеснява разработването на приложенията. Технологичните рамки могат да 
+        включват програми за поддръжка, компилатори, библиотеки, application programming interface-и (API-та), 
+        които обединяват всички различни компоненти, за да позволят разработването на проекти или системи. </p>
+        <p>Технологичните рамки притежават ключови характеристики, които ги отличават от софтуерните библиотеки. 
+        Тези характеристики са:</p>
+            <ul>
+                <li> Инверсията на контрол. </li>
+                <li> Поведението по подразбиране. </li>
+                <li> Добавянето на допълнителен код. </li>
+                <li> Немодифицируем код. </li>
+            </ul>              
+
+        <h2 id="framework7"> Какво е framework7?</h2>
+        <p> Framework7 е отворен проект (open source project), към който може да допринесе всеки, както и да бъде използван 
+        от всеки. Използва се за разработването на мобилни, десктоп или уеб приложения. Framework7 е създаден от 
+        Владимир Харлампиди и е представен през 2014 година.</p>
+        <p>Framework7 също така е незаменим инстумент за прототипиране, с което може да покажем работещия прототип на 
+        приложението възможно най-скоро, в случай че се наложи.</p>
+        <h2 id="advantageF7">Предимства на framework7</h2>
+            <ul>
+                <li>Framework7 ни предоставя възможността лесно да разработваме Andorid и iOS приложения.</li>
+                <li>Framework7 ни улеснява доста при създаването на приложения, защото изисква единстено 
+                основни познания на HTML, CSS и JavaScript.</li>
+                <li>Притежава много предварително констуирани компоненти.</li>
+                <li>Има вградени помощни библиотеки.</li>
+                <li>Синтаскисът му много прилича на jQuery.</li>
+                <li>Може да се използва с други софтуерни рамки като Angular и React. </li>
+            </ul>
+
+        <h2 id="disadvantageF7"> Недостатъци на framework7</h2>
+            <ul>
+                <li>Framework7 не поддържа платформи, различни от iOS и Android.</li>
+                <li>Изграден е около средата на Apple, и заради това е възможно темите да не изглеждат добре на устройства
+                с Android.</li>
+            </ul>
+
+        <h2 id="instalation"> Инсталиране на Framework7 CLI</h2>    
+        <p>Framework7 CLI(Command-Line Interface) е мощен инструмент, който се препоръчва да бъде използван, когато започнем
+        разработването на приложения с Framework7. Използвайки го при създаването на проект, ние имаме различни 
+        варианти за избор, като например:
+        <ul>
+            <li>Може да изберем, каква да бъде софтуерната рамка: Framework7 Core, Framework7-Vue, Framework7-React, 
+            Framework7-Svelte.</li>
+            <li>Може да изберем, каква да бъде целевата платформа: Уеб приложение, Прогресивно Уеб Приложение, 
+            Cordova приложение. </li>
+        </ul>
+        </p>
+        <p>Ето какви са и стъпките за инсталирането на Framework7 CLI и създаването на приложение:</p>
+            <ol>
+                <li>Инсталираме Node.js и NPM.</li>
+                <li>Инсталираме Cordova, изпълнявайки следния команден ред (може и да не изисква командата sudo):</li>
+                <code>$ sudo npm install -g cordova</code>
+                <li>Инсталираме Framework7 CLI, изпълнявайки следния команден ред (може и да не изисква командата sudo):</li>
+                <code>$ sudo npm install -g framework7-cli --unsafe-perm=true --allow-root</code>
+                <li> За създаването на Framework7 приложение, трябва да изпълним следната команда, в директорията,
+                в която искаме да бъде създадено приложението:</li>
+                <code>$ framework7 create </code>
+                <p>След изпълнението на командата следват следните въпроси:</p>
+                <img id="image1" src="img/Screenshot 2020-12-19 at 14.42.36.png">
+                <figcaption>Фиг. 1. Екранна снимка.</figcaption>
+                <img id="image2" src="img/Screenshot 2020-12-19 at 14.43.05.png" >
+                <figcaption>Фиг. 2. Екранна снимка.</figcaption>
+                <img id="image3" src="img/Screenshot 2020-12-19 at 14.43.21.png" >
+                <figcaption>Фиг. 3. Екранна снимка.</figcaption>
+                <img id="image4" src="img/Screenshot 2020-12-19 at 14.43.48.png" >
+                <figcaption>Фиг. 4. Екранна снимка.</figcaption>
+                <img id="image5" src="img/Screenshot 2020-12-19 at 14.43.58.png" >
+                <figcaption>Фиг. 5. Екранна снимка.</figcaption>
+                <img id="image6" src="img/Screenshot 2020-12-19 at 14.44.11.png">
+                <figcaption>Фиг. 6. Екранна снимка.</figcaption>
+                <img id="image7" src="img/Screenshot 2020-12-19 at 14.44.23.png" >
+                <figcaption>Фиг. 7. Екранна снимка.</figcaption>
+            </ol>
+
+        <h2 id="F7components">Framework7 компоненти</h2>
+        <p>Както казахме, Framework7 притежава много вградени компоненти, затова в реферата ще бъдат
+        разгледани само част от тях.</p>
+
+        <h3 id="buttons">Бутони</h3>
+        <p>Framework7 предлага куп готови за използване бутони. Различните видове бутони могат бъдат получени от допълнителни класове модификатори и техните комбинации.</p>
+        <h4>Имаме следните класове за модифициране на бутони:</h4>
+        <table>
+            <tr>
+                <th>Клас</th>
+                <th>Описание</th>
+            </tr>
+            <tr>
+                <td>button-fill</td>
+                <td>Бутонът е оцветен</td>
+            </tr>
+            <tr>
+                <td>button-fill-ios</td>
+                <td>Бутонът е оцветен само за iOS</td>
+            </tr>
+            <tr>
+                <td>button-fill-md</td>
+                <td>Бутонът е оцветен само за MD</td>
+            </tr>
+            <tr>
+                <td>button-fill-aurora</td>
+                <td>Бутонът е оцветен само за Aurora</td>
+            </tr>
+            <tr>
+                <td>button-round</td>
+                <td>Заоблен бутон</td>
+            </tr>
+            <tr>
+                <td>button-round-ios</td>
+                <td>Заоблен бутон само за iOS</td>
+            </tr>
+            <tr>
+                <td>button-round-md</td>
+                <td>Заоблен бутон само за MD</td>
+            </tr>
+            <tr>
+                <td>button-round-aurora</td>
+                <td>Заоблен бутон само за Aurora</td>
+            </tr>
+            <tr>
+                <td>button-small</td>
+                <td>Малък бутон</td>
+            </tr>
+            <tr>
+                <td>button-small-ios</td>
+                <td>Малък бутон само за iOS</td>
+            </tr>
+            <tr>
+                <td>button-small-md</td>
+                <td>Малък бутон само за MD</td>
+            </tr>
+            <tr>
+                <td>button-small-aurora</td>
+                <td>Малък бутон само за Aurora</td>
+            </tr>
+            <tr>
+                <td>button-large</td>
+                <td>Голям бутон</td>
+            </tr>
+            <tr>
+                <td>button-large-ios</td>
+                <td>Голям бутон само за iOS</td>
+            </tr>
+            <tr>
+                <td>button-large-md</td>
+                <td>Голям бутон само за MD</td>
+            </tr>
+            <tr>
+                <td>button-large-aurora</td>
+                <td>Голям бутон само за Aurora</td>
+            </tr>
+            <tr>
+                <td>button-raised</td>
+                <td>Изпъкнал бутон</td>
+            </tr>
+            <tr>
+                <td>button-raised-ios</td>
+                <td>Изпъкнал бутон само за iOS</td>
+            </tr>
+            <tr>
+                <td>button-raised-md</td>
+                <td>Изпъкнал бутон само за MD</td>
+            </tr>
+            <tr>
+                <td>button-raised-aurora</td>
+                <td>Изпъкнал бутон само за Aurora</td>
+            </tr>
+            <tr>
+                <td>button-outline</td>
+                <td>Бутон с контур</td>
+            </tr>
+            <tr>
+                <td>button-outline-ios</td>
+                <td>Бутон с контур само за iOS</td>
+            </tr>
+            <tr>
+                <td>button-outline-md</td>
+                <td>Бутон с контур само за MD</td>
+            </tr>
+            <tr>
+                <td>button-outline-aurora</td>
+                <td>Бутон с контур само за Aurora</td>
+            </tr>
+            <tr>
+                <td>button-active</td>
+                <td>Бутон, който е избран/активен. Използва се вътре в segment</td>
+            </tr>
+            <tr>
+                <td>color-[color]</td>
+                <td>Добавяне на цвят на бутона, където [color] е някой допустим цвят</td>
+            </tr>
+            </table>
+            <h4>Сегментен контрол</h4>
+            <p>Сегментният контрол е линеен набор от два или повече сегмента(бутони), всеки от който функционира като взаимно изключващ се бутон.
+            В рамките на контрола всички бутони са с еднаква ширина.</p>
+            <h4> Примери за различните видове бутони:</h4>
+            <ol>
+                <li>Обикновен бутон в червен цвят
+                    <img id="image8" src="img/Screenshot 2020-12-17 at 23.03.24.png" >
+                    <figcaption>Фиг. 8. Екранна снимка.</figcaption>
+                </li>
+                <li>Избран/Активен бутон в жълт цвят
+                    <img id="image9" src="img/Screenshot 2020-12-17 at 23.47.13.png" >
+                    <figcaption>Фиг. 9. Екранна снимка.</figcaption>
+                </li>
+                <li>Заоблен бутон оцветен в оранжев цвят
+                    <img id="image10" src="img/Screenshot 2020-12-17 at 23.47.22.png" >
+                    <figcaption>Фиг. 10. Екранна снимка.</figcaption>
+                </li>
+                <li>Голям бутон оцветен в цвят лайм
+                    <img id="image11" src="img/Screenshot 2020-12-17 at 23.47.29.png">
+                    <figcaption>Фиг. 11. Екранна снимка.</figcaption>
+                </li>
+                <li>Малък бутон оцветен в червен цвят
+                    <img id="image12" src="img/Screenshot 2020-12-18 at 0.00.06.png">
+                    <figcaption>Фиг. 12. Екранна снимка.</figcaption>
+                </li>
+                <li>Жълт бутон с контур
+                    <img id="image13" src="img/Screenshot 2020-12-18 at 0.00.17.png" >
+                    <figcaption>Фиг. 13. Екранна снимка.</figcaption>
+                </li>
+                <li>Изпъкнал, заоблен бутон в оранжев цвят
+                    <img id="image14" src="img/Screenshot 2020-12-18 at 0.00.27.png" >
+                    <figcaption>Фиг. 14. Екранна снимка.</figcaption>
+                </li>
+                <li>Сегментирани бутони (бутони на ред)
+                    <img id="image15" src="img/Screenshot 2020-12-18 at 0.15.20.png" >
+                    <figcaption>Фиг. 15. Екранна снимка.</figcaption>
+                </li>
+            </ol>
+            <p>Ето и как изглеждат визуално създадените по-горния начин бутони:
+                <img id="image16" src="img/Screenshot 2020-12-18 at 0.21.14.png">
+                <figcaption>Фиг. 16. Екранна снимка.</figcaption>
+            </p>
+
+        <h3 id="layout">Оформления</h3>
+        <p>Framework7 ни предоставя различни видове оформления. Поддържа три вида Navbar/Toolbar оформления.</p>
+        <table>
+            <tr>
+                <th>Вид оформление</th>
+                <th>Описание</th>
+            </tr>
+            <tr>
+                <td>Статично оформление</td>
+                <td>Лентата с интрументи и навигационните елементи не са постоянно видими. Те изчезват, когато скролваме
+                    из съдържанието на страницата. </td>
+            </tr>
+            <tr>
+                <td>Фиксирано оформление</td>
+                <td>Лентата с интрументи и навигационните елементи са видими постоянно, т.е не изчечват когато скорлваме из съдържанието
+                    на страницата. </td>
+            </tr>
+            <tr>
+                <td>Цялостно (Through) оформление</td>
+                <td>Това е най-широко използваният вид оформление. При него лентата с интрументи и навигационните елементи остават еднакви
+                    за всички страници в един изглед.
+                </td>
+            </tr>
+        </table>
+        <h4> Примери, за първите два вида оформления:</h4>
+            <ol>
+                <li>Статично оформление:</li>
+                    <div class="row">
+                        <div class="column">
+                            <img id="image17" src="img/Screenshot 2020-12-18 at 12.08.55.png" >
+                            <figcaption>Фиг. 17. Екранна снимка.</figcaption>
+                        </div>
+                        <div class="column">
+                            <img id="image18" src="img/Screen Recording 2020-12-18 at 9.10.12.gif"  >
+                            <figcaption>Фиг. 18. Екранна снимка.</figcaption>
+                            <span class="under-code">Демонстрация на примера.</span>
+                        </div>
+                     </div>
+                     <p></p>
+                <li>Фиксирано оформление - разликата със статичното оформление, кактo ще видите в примера, е че тук лентата с интрименти и 
+                    навигационните елементи не се намират в класа page-content, а са наследници на класа page.</li> 
+                <div class="row">
+                    <div class="column">
+                        <img id="image19" src="img/Screenshot 2020-12-18 at 12.03.15.png" >
+                        <figcaption>Фиг. 19. Екранна снимка.</figcaption>
+                    </div>
+                    <div class="column">
+                        <img id="image20" src="img/Screen-Recording-2020-12-18-at-12.06.02.gif" >
+                        <figcaption>Фиг. 20. Екранна снимка.</figcaption>
+                        <span class="under-code">Демонстрация на примера.</span>
+                    </div>
+                 </div>
+            </ol>
+            <p>Разликате между видовете оформления се изразява в това, в кой клас сa вложени лентата с интрументи и навигационните елементи.
+                <img id="image21" src="img/Screenshot 2020-12-18 at 13.24.38.png" >
+                <figcaption>Фиг. 21 - източник <a href="#source9">9</a>.</figcaption>
+            </p>
+
+            <h3 id="searchBar">Лента за търсене</h3>
+            <p>Лентата за търсене позволява на потребителя да търси конкретен елемент в елементите на списък. Търсенето на елемента 
+                става с помощта на класа searchbar. Ето и какво е оформлението на компонента "Лента за търсене":</p>
+                <img id="image22" src="img/Screenshot 2020-12-18 at 18.19.30.png">
+                <figcaption>Фиг. 22 - източник <a href="#source13">13</a>.</figcaption>
+            <p>където: <br>
+            <code> div class="searchbar-input-wrap"</code> обхваща полето за търсене и бутона за изчистване.<br>
+            <code> inpit type="search"</code> полето за търсене. <br>
+            <code> i class="searchbar-icon"</code> лупата, която се намира в началото на полето за търсене.<br>
+            <code>span class="input-clear-button"</code>бутон за изчистване на въведения за търсене елемент и нулиране на резултатите от търсенете.<br> 
+            <code>span class="searchbar-disable-button"</code> бутонът "Отказ" в лентата за търсене, който ще деактивира ленатата за търсене,
+             ще нулира резултатите от търсенете и ще изчисти полето за търсене. </p>
+            <h4>Имаме следните видове ленти за търсене:</h4>
+            <ol>
+                <li>Фиксирана лента за търсене.</li>
+                <p>Aналогично както при оформленията, тя е винаги видима и не изчезва, когато скролваме из 
+                съдържанието на страницата. В този случай тя може да бъде поставена по един от следните начини: </p>
+                <div class="row">
+                    <div class="column">
+                        <img id="image23" src="img/Screenshot 2020-12-18 at 21.58.29.png" >
+                        <figcaption>Фиг. 23 - източник <a href="#source13">13</a>.</figcaption>
+                        <span class="under-code"> Поставена като директен наследник на класа page, и ако page има също фиксирано оформление, то ленатата за 
+                            търсене трябва да бъде поставена след класовете navbar,toolbar.</span>
+                    </div>
+                <div class="column">
+                    <img id="image24" src="img/Screenshot 2020-12-18 at 21.58.56.png" >
+                    <figcaption>Фиг. 24 - източник <a href="#source13">13</a>.</figcaption>
+                    <span class="under-code">Поставена вътре в класа subnavbar, който е вътре в класа navbar (този начин е препоръчителен). </span>
+                    </div>
+                </div><br>
+                <li>Статична лента за търсене.</li>
+                <p>Аналогично както при статичното оформление.</p>
+                <img id="image25" src="img/Screenshot 2020-12-18 at 22.13.18.png"><br>
+                <figcaption>Фиг. 25 - източник <a href="#source13">13</a>.</figcaption>
+                <li>Разшираема лента за търсене.</li>
+                <p>Тя е скрита, когато е деактивирана, а след като я активираме става видима. Оформлението и е строго, и затова трябва да бъде поставена 
+                    вътре в navbar.</p>
+                    <img id="image26" src="img/Screenshot 2020-12-18 at 23.27.39.png" > <br>
+                    <figcaption>Фиг. 26 - източник <a href="#source13">13</a>.</figcaption>
+                <li>Вградена лента за търсене.</li> <br>
+                <img id="image27" src="img/Screenshot 2020-12-18 at 23.34.41.png" > 
+                <figcaption>Фиг. 27 - източник <a href="#source13">13</a>.</figcaption>  
+            </ol>
+            <h4>Пример за лента за търсене:</h4>
+            <div class="row">
+                <div class="column">
+                    <img id="image28" src="img/Screenshot 2020-12-18 at 23.59.08.png" >
+                    <figcaption>Фиг. 28. Екранна снимка.</figcaption>
+                </div>
+                <div class="column">
+                    <img id="image29" src="img/Screen-Recording1-2020-12-19-at-0.01.53.gif" >
+                    <figcaption>Фиг. 29. Екранна снимка.</figcaption>
+                    <span class="under-code">Демонстрация на примера.</span>
+                </div>
+            </div>
+          <h3 id="inputf"> Поле за въвеждане</h3>  
+          <p> Класът item-input е предназначен за въвеждане от потребителя. Ето какво е оформлението на полето за въвеждане:</p>
+          <div class="row">
+              <div class="column">
+                  <img id="image30" src="img/Screenshot 2020-12-19 at 1.35.54.png" >
+                  <figcaption>Фиг. 30. Екранна снимка.</figcaption>
+              </div>
+              <div class="column">
+                  <img id="image31" src="img/Screenshot 2020-12-19 at 1.43.27.png" >
+                  <figcaption>Фиг. 31. Екранна снимка.</figcaption>
+              </div>
+          </div>
+          <p>Поддържат се следните типове за въвеждане от потребителя:</p>
+          <ol>
+            <li>За въвеждането на текст - text,password,email,tel,url,data,number,datetime-local.<br>
+            Пример:</li>
+            <div class="row">
+                <div class="column">
+                    <img id="image32" src="img/Screenshot 2020-12-19 at 10.37.54.png" >
+                    <figcaption>Фиг. 32. Екранна снимка.</figcaption>
+                    <span class="under-code">Поле за въвеждане на парола.</span>
+                </div>
+                <div class="column">
+                    <img id="image33" src="img/Screen-Recording1-2020-12-19-at-10.38.24.gif">
+                    <figcaption>Фиг. 33. Екранна снимка.</figcaption>
+                    <span class="under-code">Демонстрация на примера.</span>
+                </div>
+            </div><br>
+            <li>За въвеждане на стойност измежду дадени такива (например за пол да се избере мъж/жена).<br>
+            Пример:</li>
+            <div class="row">
+                <div class="column">
+                    <img id="image34" src="img/Screenshot 2020-12-19 at 10.45.53.png">
+                    <figcaption>Фиг. 34. Екранна снимка.</figcaption>
+                    <span class="under-code">Поле за въвеждане с избор измежду дадени възможни.</span>
+                </div>
+                <div class="column">
+                    <img id="image35" src="img/Screen-Recording1-2020-12-19-at-10.46.38.gif">
+                    <figcaption>Фиг. 35. Екранна снимка.</figcaption>
+                    <span class="under-code">Демонстрация на примера.</span>
+                </div>
+            </div><br>
+            <li>За въвеждане в текстово поле.<br>Пример:</li>
+            <div class="row">
+                <div class="column">
+                    <img id="image36" src="img/Screenshot 2020-12-19 at 12.45.03.png">
+                    <figcaption>Фиг. 36. Екранна снимка.</figcaption>
+                    <span class="under-code">Поле за въвеждане в текстово поле.</span>
+                </div>
+                <div class="column">
+                    <img id="image37" src="img/Screen-Recording1-2020-12-19-at-12.46.33.gif">
+                    <figcaption>Фиг. 37. Екранна снимка.</figcaption>
+                    <span class="under-code">Демонстрация на примера.</span>
+                </div>
+            </div><br>
+            <li>За избиране на обхват чрез преплъзване.<br>Пример:</li>
+            <div class="row">
+                <div class="column">
+                    <img id="image38" src="img/Screenshot 2020-12-19 at 13.55.26.png" >
+                    <figcaption>Фиг. 38. Екранна снимка.</figcaption>
+                    <span class="under-code">Избор на обхват чрез преплъзване.</span>
+                </div>
+                <div class="column">
+                    <img id="image39" src="img/Screen1-Recording-2020-12-19-at-13.56.30.gif">
+                    <figcaption>Фиг. 39. Екранна снимка.</figcaption>
+                    <span class="under-code">Демонстрация на примера.</span>
+                </div>
+            </div><br>
+          </ol>
+          <p>Framework7 поддържа HTML5 валидиране въз основа на свойството за въвеждане на валидни данни. Проверкaта за валидни данни зависи от типа на въведената стойност.<br>
+              За да активираме проверката трябва да добавим атрибутите <code>required</code> и <code>validate</code> при въвеждането на стойноста.<br>
+              Имаме възможността да добавим и собствено правило за проверка на валидни данни, като за целта трябва да добавим допълнителния атрибут <code>pattern</code>.</p> 
+              <p>Нека видим няколко примера: 
+            <img id="image40" src="img/Screenshot 2020-12-19 at 14.22.25.png"> 
+            <figcaption>Фиг. 40 - източник <a href="#source14">14</a>.</figcaption>
+
+        </p>
+    </p>
+    <h2 id="sources">Източници</h2>
+    <ol>
+        <li><a id="source1" href="https://en.wikipedia.org/wiki/Software_framework" target="_blank">https://en.wikipedia.org/wiki/Software_framework</a>, последно посетено на 16.11.2020.</li>
+        <li><a id="source2" href="https://framework7.io/docs/introduction.html" target="_blank">https://framework7.io/docs/introduction.html</a>, последно посетено на 19.12.2020.</li>
+        <li><a id="source3" href="https://www.academia.edu/33673842/Framework7_tutorial" target="_blank"> https://www.academia.edu/33673842/Framework7_tutorial</a>, последно посетено на 19.12.2020.</li>
+        <li><a id="source4" href="https://framework7.io/cli/" target="_blank"> https://framework7.io/cli/</a>, последно посетено на 19.12.2020.</li>
+        <li><a id="source5" href="https://framework7.io/cli/installation.html" target="_blank">https://framework7.io/cli/installation.html</a>, последно посетено на 19.12.2020.</li>
+        <li><a id="source6" href="https://framework7.io/cli/create-app.html" target="_blank">https://framework7.io/cli/create-app.html</a>, последно посетено на 19.12.2020.</li>
+        <li><a id="source7" href="https://framework7.io/docs/button.html" target="_blank">https://framework7.io/docs/button.html</a>, последно посетено на 19.12.2020.</li>
+        <li><a id="source8" href="https://www.tutorialspoint.com/framework7/framework7_layouts.htm" target="_blank">https://www.tutorialspoint.com/framework7/framework7_layouts.htm</a>, последно посетено на 19.12.2020.</li>
+        <li><a id="source9" href="https://v1.framework7.io/docs/navbar-toolbar-layouts.html" target="_blank">https://v1.framework7.io/docs/navbar-toolbar-layouts.html</a>, последно посетено на 19.12.2020.</li>
+        <li><a id="source10" href="https://www.tutorialspoint.com/framework7/static_layout.htm" target="_blank">https://www.tutorialspoint.com/framework7/static_layout.htm</a>, последно посетено на 19.12.2020.</li>
+        <li><a id="source11" href="https://www.tutorialspoint.com/framework7/fixed_layout.htm" target="_blank">https://www.tutorialspoint.com/framework7/fixed_layout.htm</a>, последно посетено на 19.12.2020.</li>
+        <li><a id="source12" href="https://www.tutorialspoint.com/framework7/through_layout.htm" target="_blank">https://www.tutorialspoint.com/framework7/through_layout.htm</a>, последно посетено на 19.12.2020.</li>
+        <li><a id="source13" href="https://framework7.io/docs/searchbar.html" target="_blank">https://framework7.io/docs/searchbar.html</a>, последно посетено на 19.12.2020.</li>
+        <li><a id="source14" href="https://framework7.io/docs/inputs.html#validation" target="_blank">https://framework7.io/docs/inputs.html#validation</a>, последно посетено на 19.12.2020.</li>
+    </ol>
+    <h2 id="figure">Фигури</h2>
+    <ul>
+
+        <li>Фигури, които са екранни снимки: <a href="#image1">1</a>, <a href="#image2">2</a>, <a href="#image3">3</a>, <a href="#image4">4</a>, <a href="#image5">5</a>, <a href="#image6">6</a>, 
+         <a href="#image7">7</a>, <a href="#image8">8</a>, <a href="#image9">9</a>, <a href="#image10">10</a>, <a href="#image11">11</a>, <a href="#image12">12</a>, 
+            <a href="#image13">13</a>, <a href="#image14">14</a>, <a href="#image15">15</a>, <a href="#image16">16</a>, <a href="#image17">17</a>, <a href="#image18">18</a>, 
+            <a href="#image19">19</a>, <a href="#image20">20</a>, <a href="#image28">28</a>, <a href="#image29">29</a>, <a href="#image30">30</a>, <a href="#image31">31</a>, 
+            <a href="#image32">32</a>, <a href="#image33">33</a>, <a href="#image34">34</a>, <a href="#image35">35</a>, <a href="#image36">36</a>, <a href="#image37">37</a>, 
+            <a href="#image38">38</a>, <a href="#image39">39</a>.</li>
+        <li>Фигура от източник <a href="#source9">9</a>: <a href="#image21">21</a></li>
+        <li>Фигури от източник <a href="#source13">13</a>: <a href="#image22">22</a>, <a href="#image23">23</a>, <a href="#image24">24</a>, <a href="#image25">25</a>, <a href="#image26">26</a>, 
+            <a href="#image27">27</a>.</li>
+        <li>Фигура от източник <a href="#source14">14</a>: <a href="#image40">40</a>.</li>
+    </ul>
+    <h2 id="about">За автора</h2>
+    <p>Име: Симона Иванова Иванова.</p>
+    <p>Факултетен номер: 81455.</p>
+    <p>Специалност: Компютърни науки; Курс: 4; Поток: 1; Група: 1.</p>
+    </div>    
+</body>
+</html>    
